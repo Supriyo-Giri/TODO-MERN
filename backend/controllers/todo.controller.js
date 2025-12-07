@@ -3,7 +3,7 @@ import todoModel from '../models/todo.model.js';
 export const getAlltodo = async (req,res) => {
     try {
         const todos = await todoModel.find({}).lean();
-        res.status(200).json({ todos });
+        res.status(200).json(todos);
     } catch (error) {
         console.log(`Error in getAllTodo controller: ${error}`);
         res.status(500).json(`Server error: ${error}`);
