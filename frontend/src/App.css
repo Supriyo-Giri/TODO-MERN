@@ -1,79 +1,42 @@
-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* border: 20px solid black; */
-    /* height: 100vh; */
-    padding-top: 20px;
-    /* border: 1px solid rgb(211, 210, 210); */
-    /* width: 100vw; */
-}
-div h2 {
-    font-size: xx-large;
-}
-
-.delImg{
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-h2 {
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
-  margin-top: 20px;
 }
 
-/* Todo List Items */
-li {
-  list-style: none;
-  background: #ffffff;
-  margin: 10px auto;
-  padding: 12px 15px;
-  width: 80%;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
-  transition: all 0.2s ease-in-out;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-li:hover {
-  transform: scale(1.02);
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Checkbox styling */
-input[type="checkbox"] {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-/* Text style */
-li span {
-  font-size: 18px;
-  flex: 1;
-  margin-left: 12px;
+.card {
+  padding: 2em;
 }
 
-/* Delete image button */
-.delImg {
-  width: 30px;
-  height: 30px;
-  background: red;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 12px;
-  display: inline-block;
-}
-
-.delImg:hover {
-  background: darkred;
+.read-the-docs {
+  color: #888;
 }
