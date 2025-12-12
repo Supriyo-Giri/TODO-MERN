@@ -10,13 +10,10 @@ const InputField = ({ refresh }) => {
   });
   const addNewTodo = async () => {
     try {
-      await axios.post(
-        "http://localhost:5000/api/add",
-        {
-          task: newTodo.task,
-        },
-        { new: true }
-      );
+      await axios.post("https://todo-mern-1o4y.onrender.com/api/add", {
+        task: newTodo.task,
+      });
+
       toast.success("Successfully created todo!");
       refresh();
     } catch (error) {

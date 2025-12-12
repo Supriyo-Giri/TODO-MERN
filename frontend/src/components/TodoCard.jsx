@@ -12,9 +12,10 @@ const TodoCard = ({ refresh, id, task, isDone }) => {
 
   const handleIsDone = async (newValue) => {
     try {
-      await axios.put(`http://localhost:5000/api/update-todo/${id}`, {
-        done: newValue,
-      });
+      await axios.put(`https://todo-mern-1o4y.onrender.com/api/update-todo/${id}`, {
+  done: newValue,
+});
+
       toast.success(newValue ? "Task is done" : "Task is not done!");
       refresh();
     } catch (error) {
@@ -24,7 +25,7 @@ const TodoCard = ({ refresh, id, task, isDone }) => {
   };
   const DeleteTodo = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/delete/${id}`);
+      await axios.delete(`https://todo-mern-1o4y.onrender.com/api/delete/${id}`);
       toast.success(`Todo is deleted!`);
       console.log(`task with id: ${id} deleted from database!`);
 
@@ -36,9 +37,10 @@ const TodoCard = ({ refresh, id, task, isDone }) => {
   };
   const handleEdit = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/update-todo/${id}`, {
-        task: editText,
-      });
+      await axios.put(`https://todo-mern-1o4y.onrender.com/api/update-todo/${id}`, {
+  task: editText,
+});
+
       toast.success(`Todo updated!`);
       refresh();
     } catch (error) {

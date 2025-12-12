@@ -13,7 +13,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const getTodos = await axios.get('http://localhost:5000/api/get-all-tasks');
+        const getTodos = await axios.get('https://todo-mern-1o4y.onrender.com/api/get-all-tasks');
+
 
         toast.success("Fetched all the todos");
         setTodo(getTodos.data);
@@ -29,7 +30,8 @@ function App() {
 
   const fetchData = async () => {
       try {
-        const getTodos = await axios.get('http://localhost:5000/api/get-all-tasks');
+        const getTodos = await axios.get('https://todo-mern-1o4y.onrender.com/api/get-all-tasks');
+
         setTodo(getTodos.data);
         setLoading(false);
 
