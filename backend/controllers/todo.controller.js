@@ -37,30 +37,15 @@ export const deleteTodo = async (req,res) => {
         res.status(500).json(`Server error: ${error}`);
     }
 }
-export const checkedTodo = async (req,res) => {
-    try {
-        const todoId = req.params.id;
-        if(!todoId){
-            return res.status(400).json({message: "todo ID cannot be empty!"});
-        }
-        const { done } = req.body;
 
-        const updatedDone = await todoModel.findByIdAndUpdate(todoId,{ done: done }, {new: true});
-        res.status(200).json({message: "Checked successfully",checkedTodo: updatedDone});
-    } catch (error) {
-        console.log(`Error in checkedTodo controller: ${error}`);
-        res.status(500).json(`Server error: ${error}`);
-    }
-
-}
 export const updateTodo = async (req,res) => {
     try {
         const todoId = req.params.id;
         if(!todoId){
             res.status(400).json({message: "todo ID not found"});
         }
-        const { task } = req.body;
-        const updatedTask = await todoModel.findByIdAndUpdate(todoId,{task: task},{new: true});
+        const updatedTodo = req.body;
+        const updatedTask = await todoModel.findByIdAndUpdate(todoId,updatedTodo,{new: true});
         res.status(200).json({message: "Updated successfully",newTodo: updatedTask});
 
     } catch (error) {
